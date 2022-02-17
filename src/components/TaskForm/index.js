@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { createTask } from '../../api';
 import './TaskForm.css';
 
-const TaskForm = ({ callbackList }) => {
+const TaskForm = () => {
   const [state, setState] = useState({
     inputTask: '',
   });
@@ -17,7 +17,6 @@ const TaskForm = ({ callbackList }) => {
   const handleClick = async () => {
     setState({ ...state, inputTask: '' });
     await createTask(state.inputTask);
-    callbackList();
   }
 
   return(
