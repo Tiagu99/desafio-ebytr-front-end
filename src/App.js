@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TaskForm from "./components/TaskForm";
 import { getList } from './api';
 import ListTask from './components/ListTask';
+import SortButtons from './components/SortButtons';
 
 function App() {
   const [state, setState] = useState([]);
@@ -14,9 +15,24 @@ function App() {
     fetchData();
   }, []);
 
+  const handleClick = ({ target }) => {
+    const { name } = target;
+    console.log(name)
+    const newList = [ ...state ];
+    newList.sort((taskA, taskB) => {
+      if (taskA[name] > taskB[name]) return 1
+      if (taskA[name] < taskB[name]) return -1
+      return 0
+     });
+    console.log('list normal ', state)
+    console.log('list ordenada ', newList)
+    setState(newList);
+  }
+
   return (
     <div className="App">
       <TaskForm callbackList={ fetchData } />
+      <SortButtons handleClick={ handleClick } />
       <ListTask listTasks={ state } />
     </div>
   );
