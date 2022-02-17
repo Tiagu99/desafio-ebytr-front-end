@@ -22,10 +22,8 @@ const TaskForm = ({ callbackList }) => {
   return(
     <div>
       <div className="">
-        <Form.Label htmlFor="inputTask">New Task</Form.Label>
         <Form.Control
           type="text"
-          id="inputTask"
           name="inputTask"
           aria-describedby="inputTaskHelp"
           placeholder="ex. New Task"
