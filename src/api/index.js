@@ -14,3 +14,10 @@ export const createTask = async (task) => {
 
   await fetch(API_URL, requestConfig);
 }
+
+export const getList = () => {
+  const taskList = fetch(API_URL)
+    .then((response) => response.json)
+    .then((response) => response.data);
+  return taskList;
+}
