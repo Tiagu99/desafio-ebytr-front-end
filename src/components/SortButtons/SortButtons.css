@@ -1,0 +1,9 @@
+.buttons-sort-container {
+  display: flex;
+  margin: 20px auto;
+  width: 60%;
+}
+
+.button-container {
+  margin-right: 10px;
+}

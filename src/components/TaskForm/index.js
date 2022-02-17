@@ -40,7 +40,9 @@ const TaskForm = ({ callbackList }) => {
           variant="primary"
           onClick={ handleClick }
           disabled={ state.inputTask.length < 4 }
-        >Create Task</Button>
+        >
+          Create Task
+        </Button>
       </div>
     </div>
   );
