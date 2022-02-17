@@ -14,6 +14,7 @@ const TaskForm = ({ callbackList }) => {
   }
 
   const handleClick = async () => {
+    setState({ ...state, inputTask: '' });
     await createTask(state.inputTask);
     callbackList();
   }
