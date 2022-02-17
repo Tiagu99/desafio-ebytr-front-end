@@ -24,7 +24,7 @@ describe('Teste do botão de criação de uma nova task', () => {
     render(<App />);
 
     const createTaskButton = screen.getByRole('button', { name: 'Create Task' });
-    const inputTask = screen.getByLabelText('New Task');
+    const inputTask = screen.getByPlaceholderText('ex. New Task');
 
     fireEvent.change(inputTask, { target: { value: 'New task' } });
 
