@@ -1,13 +1,13 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import App from '../App';
+import '@testing-library/jest-dom'
 
 describe('Teste do botão de criação de uma nova task', () => {
   test('O botão deve estar desabilitado quando o input de nova task estiver vazio', () => {
     render(<App />);
   
     const createTaskButton = screen.getByRole('button', { name: 'Create Task' });
-
-    expect(createTaskButton).toBeDisabled();
+    expect(createTaskButton).toBeDisabled()
   });
   test('O botão fica habilitado quando tem o minímo de caracteres no input de nova task', () => {
     render(<App />);
@@ -24,14 +24,14 @@ describe('Teste do botão de criação de uma nova task', () => {
     render(<App />);
 
     const createTaskButton = screen.getByRole('button', { name: 'Create Task' });
-    const inputTask = screen.getByRole('textbox');
+    const inputTask = screen.getByPlaceholderText('ex. New Task');
 
     fireEvent.change(inputTask, { target: { value: 'New task' } });
 
-    expect(inputTask.target).toHaveValue('New task');
+    expect(inputTask).toHaveValue('New task');
 
     fireEvent.click(createTaskButton);
 
-    expect(inputTask.target).toHaveValue('');
+    expect(inputTask).toHaveValue('');
   });
 });
