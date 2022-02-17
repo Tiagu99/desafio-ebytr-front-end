@@ -17,7 +17,6 @@ export const createTask = async (task) => {
 
 export const getList = () => {
   const taskList = fetch(API_URL)
-    .then((response) => response.json)
-    .then((response) => response.data);
+    .then((response) => response.json());
   return taskList;
 }
