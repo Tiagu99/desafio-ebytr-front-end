@@ -16,7 +16,22 @@ describe('Teste do botão de criação de uma nova task', () => {
     const inputTask = screen.getByRole('textbox');
     
     fireEvent.change(inputTask, { target: { value: 'New task' } });
-    
+
     expect(createTaskButton).toBeEnabled();
+  });
+
+  test('Após click no botão o input deve ficar vazio', () => {
+    render(<App />);
+
+    const createTaskButton = screen.getByRole('button', { name: 'Create Task' });
+    const inputTask = screen.getByRole('textbox');
+
+    fireEvent.change(inputTask, { target: { value: 'New task' } });
+
+    expect(inputTask.target).toHaveValue('New task');
+
+    fireEvent.click(createTaskButton);
+
+    expect(inputTask.target).toHaveValue('');
   });
 });
