@@ -1,0 +1,13 @@
+.card-div {
+  background-color: #eaf1ef;
+  border: white;
+  border-radius: 5px;
+  box-shadow: 1px 5px 10px rgb(204, 201, 201);
+  color: white;
+  display: flex;
+  height: 150px;
+  margin: 10px auto;
+  padding: 0 2%;
+  text-decoration: none;
+  width: 470px;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import './OrderCard.css';
+import './TaskCard.css';
 
 const TaskCard = ({ task }) => (
   <div className="card-div">
