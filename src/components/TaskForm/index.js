@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { createTask } from '../../api';
+import './TaskForm.css';
 
 const TaskForm = ({ callbackList }) => {
   const [state, setState] = useState({
@@ -20,7 +21,7 @@ const TaskForm = ({ callbackList }) => {
   }
 
   return(
-    <div>
+    <div className="new-task-container">
       <div className="input-task-container">
         <Form.Control
           type="text"
@@ -34,11 +35,13 @@ const TaskForm = ({ callbackList }) => {
           Must be 4 characters.
         </Form.Text>
       </div>
-      <Button
-        variant="primary"
-        onClick={ handleClick }
-        disabled={ state.inputTask.length < 4 }
-      >Create Task</Button>
+      <div>
+        <Button
+          variant="primary"
+          onClick={ handleClick }
+          disabled={ state.inputTask.length < 4 }
+        >Create Task</Button>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,10 @@
+.input-task-container {
+  margin-right: 20px;
+  width: 80%;
+}
+
+.new-task-container {
+  display: flex;
+  width: 60%;
+  margin: 20px auto;
+}
