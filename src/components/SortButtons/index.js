@@ -7,7 +7,7 @@ const SortButtons = ({ handleClick }) => (
     <div className="button-container">
       <Button
         name="task"
-        variant="primary"
+        variant="outline-secondary"
         onClick={ handleClick }
       >
         Nome
@@ -16,7 +16,7 @@ const SortButtons = ({ handleClick }) => (
     <div className="button-container">
       <Button
         name="time"
-        variant="primary"
+        variant="outline-secondary"
         onClick={ handleClick }
       >
         Data
@@ -25,7 +25,7 @@ const SortButtons = ({ handleClick }) => (
     <div className="button-container">
       <Button
         name="status"
-        variant="primary"
+        variant="outline-secondary"
         onClick={ handleClick }
       >
         Status
