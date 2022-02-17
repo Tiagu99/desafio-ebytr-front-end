@@ -5,18 +5,18 @@ import ListTask from './components/ListTask';
 
 function App() {
   const [state, setState] = useState([]);
+  
+  const fetchData = async () => {
+    setState(await getList());
+  };
 
   useEffect(() => {
-    async function fetchData(){
-      setState(await getList());
-    };
-
     fetchData();
-
   }, []);
+
   return (
     <div className="App">
-      <TaskForm />
+      <TaskForm callbackList={ fetchData } />
       <ListTask listTasks={ state } />
     </div>
   );
