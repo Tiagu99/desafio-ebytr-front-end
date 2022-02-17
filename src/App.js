@@ -17,15 +17,12 @@ function App() {
 
   const handleClick = ({ target }) => {
     const { name } = target;
-    console.log(name)
     const newList = [ ...state ];
     newList.sort((taskA, taskB) => {
       if (taskA[name] > taskB[name]) return 1
       if (taskA[name] < taskB[name]) return -1
       return 0
      });
-    console.log('list normal ', state)
-    console.log('list ordenada ', newList)
     setState(newList);
   }
 
