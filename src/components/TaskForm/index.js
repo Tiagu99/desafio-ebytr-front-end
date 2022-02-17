@@ -21,7 +21,7 @@ const TaskForm = ({ callbackList }) => {
 
   return(
     <div>
-      <div className="">
+      <div className="input-task-container">
         <Form.Control
           type="text"
           name="inputTask"
