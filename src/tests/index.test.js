@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import '@testing-library/jest-dom'
 import App from '../App';
 
 describe('Teste do botão de criação de uma nova task', () => {
@@ -6,8 +7,7 @@ describe('Teste do botão de criação de uma nova task', () => {
     render(<App />);
   
     const createTaskButton = screen.getByRole('button', { name: 'Create Task' });
-
-    expect(createTaskButton).toBeDisabled();
+    expect(createTaskButton).toBeDisabled()
   });
   test('O botão fica habilitado quando tem o minímo de caracteres no input de nova task', () => {
     render(<App />);
